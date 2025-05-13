@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Mahir Sikder Shuvo - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <section class="container">
+    <nav>
+        <div class="container">
+            <h1>Mohammad Mahir Sikder Shuvo</h1>
+            <span class="menu-icon" onclick="toggleMenu()">☰</span>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section glass" style="display: flex; flex-direction: row;">
+        <div>
+            <img src="img.jpg" alt="myPic" style="max-width:500px ;min-width: 150px; margin-right: 50px; ">
+        </div>
+        <div class="container" >
+            <h2>About Me</h2>
+            <p class="project-card">
+                I am a motivated student at Green University of Bangladesh, passionate about creating user-friendly interfaces and robust web applications. With expertise in UI/UX design and web development, I focus on delivering seamless digital experiences. My foundational knowledge in Software Quality Assurance (SQA) complements my technical skills, enabling me to contribute to high-quality software solutions. My professional goal is to become a leading UI/UX designer and full-stack developer, crafting innovative digital products that enhance user satisfaction and drive business success, while continuously advancing my expertise through hands-on projects and industry collaboration.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section glass">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">UI/UX Design (Figma)</div>
+                <div class="skill-card">HTML</div>
+                <div class="skill-card">CSS</div>
+                <div class="skill-card">JavaScript</div>
+                <div class="skill-card">React</div>
+                <div class="skill-card">Git</div>
+                <div class="skill-card">Responsive Web Design</div>
+                <div class="skill-card">SQA Basics</div>
+                <div class="skill-card">Prototyping</div>
+                <div class="skill-card">Wireframing</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section glass">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h3>Shoe Website Landing Page UI/UX Design</h3>
+                <p>Designed a visually appealing and user-centric landing page for a shoe retail website using Figma. Created wireframes and prototypes to optimize user flow and enhance customer engagement.</p>
+                <a href="https://www.figma.com/design/ukAekqQOXLNBfvciU9mDF1/projects?node-id=71-37&t=VNuA5wLMD3ItS8uC-1">View Figma Prototype</a>
+            </div>
+            <div class="project-card">
+                <h3>PandaMart E-Commerce Website Redesign</h3>
+                <p>Redesigned a simple e-commerce website to improve user experience and visual appeal, focusing on intuitive navigation and modern design. Implemented the front-end using HTML, CSS, and JavaScript, ensuring responsiveness across devices.</p>
+                <a href="https://github.com/Greymist-WOLF/pandamart">View GitHub Repository</a>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section glass ">
+        <div class="container ">
+            <h2>Education</h2>
+            <div class="education-item project-card">
+                <h3>B.Sc. in Computer Science and Engineering (In Progress)</h3>
+                <p>Green University of Bangladesh, Purbachol | 2021–Present</p>
+                <p>Relevant Coursework: Web Development, Human-Computer Interaction, Software Engineering</p>
+            </div>
+            <div class="education-item project-card">
+                <h3>A-Levels</h3>
+                <p>Endeavour, Dhaka | 2018–2020</p>
+                <p>Grades: B (Mathematics), C (Physics)</p>
+            </div>
+            <div class="education-item project-card">
+                <h3>O-Levels</h3>
+                <p>Islamic International School and College, Dhaka | 2016–2018</p>
+                <p>Grades: A (Mathematics, Physics, Chemistry, Bangla), B (Biology), C (English)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section glass ">
+        <div class="container project-card">
+            <h2>Contact</h2>
+            <p>Feel free to reach out!</p>
+            <ul class="contact-list">
+                <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></li>
+                <li>GitHub: <a href="https://github.com/Greymist-WOLF">github.com/Greymist-WOLF</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Mohammad Mahir Sikder Shuvo. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Smooth scrolling for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close menu on link click (mobile)
+                if (window.innerWidth <= 700) {
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+
+        // Fade-in animation for sections
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
